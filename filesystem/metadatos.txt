@@ -1,0 +1,76 @@
+hola.txt ño rw- "Modificado por Usuario 2 - iteración 5" (eliminado)
+hola.txt fue modificado por jm-so. (eliminado)
+hola.txt fue modificado por jm-so. (eliminado)
+hola.txt fue modificado por jm-so. (eliminado)
+hola.txt fue modificado por jm-so. (eliminado)
+hola.txt fue modificado por jm-so. (eliminado)
+hola.txt fue modificado por jm-so. (eliminado)
+hola.txt fue eliminado por Usuario 4. (eliminado)
+hola.txt fue eliminado por jm-so.
+fea.txt ño rw- "Modificado por Usuario 2 - iteración 5"
+fea.txt fue modificado por jm-so.
+fea.txt fue eliminado por Usuario 4.
+linda.txt ño rw- "Modificado por Usuario 2 - iteración 5"
+linda.txt fue creado por jm-so.
+linda.txt fue modificado por jm-so.
+linda.txt fue eliminado por Usuario 4.
+preciosa.txt ño rw- "Modificado por Usuario 2 - iteración 5"
+preciosa.txt fue creado por jm-so.
+preciosa.txt fue modificado por jm-so.
+preciosa.txt fue eliminado por Usuario 4.
+preciosa_divina.txt 0 rw- ""
+preciosa_divina.txt fue creado por jm-so.
+preciosa_divina.txt fue eliminado por Usuario 4.
+preciosa_divina_delicada.txt 0 rwx ""
+preciosa_divina_delicada.txt fue creado por jm-so.
+preciosa_divina_delicada.txt fue eliminado por Usuario 4.
+preciosaxd.txt 0 rwx ""
+preciosaxd.txt fue creado por jm-so.
+preciosaxdd.txt 0 rwx ""
+preciosaxdd.txt fue creado por jm-so.
+preciosaxdd.txt fue eliminado por Usuario 4.
+preciosaxd fue eliminado por jm-so.
+preciosaxd.txt fue eliminado por jm-so.
+putita_linda.txt ño rwx "que linda"
+putita_linda.txt fue creado por jm-so.
+putita_linda.txt fue modificado por jm-so.
+putita_linda.txt fue eliminado por jm-so.
+estelar.txt ño rwx "super"
+estelar.txt fue creado por jm-so.
+estelar.txt fue modificado por jm-so.
+estelar.txt fue eliminado por jm-so.
+agora.txt 0 rwx ""
+agora.txt fue creado por jm-so.
+agora.txt fue eliminado por Usuario 4.
+agora.txt fue eliminado por jm-so.
+agora_SI.txt 0 rwx ""
+agora_SI.txt fue creado por jm-so.
+agora_SI.txt fue eliminado por jm-so.
+semaforo.txt ño rwx "Modificado por Usuario 2 - iteración 5"
+semaforo.txt fue creado por jm-so.
+semaforo.txt fue modificado por jm-so.
+semaforo.txt fue eliminado por jm-so.
+semaforo_ño.txt 0 rwx ""
+semaforo_ño.txt fue creado por jm-so.
+semaforo_ño.txt fue modificado por jm-so.
+semaforo_ño.txt fue modificado por jm-so.
+semaforo_ño.txt fue modificado por jm-so.
+semaforo_ño.txt fue modificado por jm-so.
+semaforo_ño.txt fue modificado por jm-so.
+semaforo_ño.txt fue modificado por jm-so.
+semaforo_ño.txt fue eliminado por jm-so.
+semaforo_ño.txt fue modificado por jm-so.
+semaforo_ño.txt fue modificado por jm-so.
+semaforo_ño.txt fue modificado por jm-so.
+semaforo_ño.txt fue modificado por jm-so.
+semaforo_ño.txt fue modificado por jm-so.
+semaforo_1.txt fue modificado por jm-so.
+semaforo_1.txt fue eliminado por jm-so.
+bien.txt ño rwx "Modificado por Usuario 2 - iteración 5"
+bien.txt fue creado por jm-so.
+bien.txt fue modificado por jm-so.
+bien.txt fue eliminado por jm-so.
+muni.txt ño rwx "Modificado por Usuario 2 - iteración 5"
+muni.txt fue creado por jm-so.
+muni.txt fue modificado por jm-so.
+muni.txt fue eliminado por jm-so.
