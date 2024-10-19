@@ -74,3 +74,7 @@ muni.txt ño rwx "Modificado por Usuario 2 - iteración 5"
 muni.txt fue creado por jm-so.
 muni.txt fue modificado por jm-so.
 muni.txt fue eliminado por jm-so.
+profe.txt ño rwx "Modificado por Usuario 2 - iteración 5"
+profe.txt fue creado por jm-so.
+profe.txt fue modificado por jm-so.
+profe.txt fue eliminado por jm-so.
