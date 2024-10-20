@@ -86,3 +86,17 @@ archivo_prueba2.txt 0 rwx ""
 archivo_prueba2.txt fue creado por jm-so.
 pruebita.txt 0 rwx ""
 pruebita.txt fue creado por jm-so.
+tonta.txt 0 rwx ""
+tonta.txt fue creado por jm-so.
+tontita.txt 0 rwx ""
+tontita.txt fue creado por jm-so.
+burra.txt ño rwx "hola soy burra "
+burra.txt fue creado por jm-so.
+burra.txt fue modificado por jm-so.
+burra.txt fue eliminado por .
+lucy.txt 0 rwx ""
+lucy.txt fue creado por jm-so.
+lola.txt ño rwx "Modificado por Usuario 2 - iteración 5"
+lola.txt fue creado por jm-so.
+lola.txt fue modificado por jm-so.
+lola.txt fue eliminado por .

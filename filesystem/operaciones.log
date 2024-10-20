@@ -1,0 +1,21 @@
+2024-10-20 02:42:02 | PID: 3009 | Operación: Prueba | Archivo: archivo_prueba.txt | Resultado: Éxito
+2024-10-20 02:42:46 | PID: 3028 | Operación: Creación | Archivo: burra.txt | Resultado: Éxito
+2024-10-20 02:45:05 | PID: 3082 | Operación: Escritura | Archivo: burra.txt | Resultado: Éxito
+2024-10-20 02:45:49 | PID: 3100 | Operación: Lectura | Archivo: burra.txt | Resultado: Éxito
+2024-10-20 02:46:18 | PID: 3110 | Operación: Eliminación | Archivo: burra.txt | Resultado: Éxito
+2024-10-20 02:51:25 | PID: 3205 | Operación: Lectura | Archivo: JM.txt | Resultado: Error: No existe
+2024-10-20 02:52:14 | PID: 3226 | Operación: Lectura | Archivo: tonta.txt | Resultado: Éxito
+2024-10-20 02:56:32 | PID: 3297 | Usuario: jm-so | Operación: Creación | Archivo: lucy.txt | Resultado: Éxito
+2024-10-20 03:06:17 | PID: 3489 | Usuario: jm-so | Operación: Creación | Archivo: lola.txt | Resultado: Éxito
+2024-10-20 03:06:17 | PID: 3502 | Usuario: jm-so | Operación: Escritura | Archivo: lola.txt | Resultado: Éxito
+2024-10-20 03:06:19 | PID: 3516 | Usuario: jm-so | Operación: Lectura | Archivo: lola.txt | Resultado: Éxito
+2024-10-20 03:06:19 | PID: 3528 | Usuario: jm-so | Operación: Escritura | Archivo: lola.txt | Resultado: Éxito
+2024-10-20 03:06:20 | PID: 3537 | Usuario: jm-so | Operación: Lectura | Archivo: lola.txt | Resultado: Éxito
+2024-10-20 03:06:20 | PID: 3551 | Usuario: jm-so | Operación: Escritura | Archivo: lola.txt | Resultado: Éxito
+2024-10-20 03:06:21 | PID: 3560 | Usuario: jm-so | Operación: Lectura | Archivo: lola.txt | Resultado: Éxito
+2024-10-20 03:06:21 | PID: 3574 | Usuario: jm-so | Operación: Escritura | Archivo: lola.txt | Resultado: Éxito
+2024-10-20 03:06:22 | PID: 3583 | Usuario: jm-so | Operación: Lectura | Archivo: lola.txt | Resultado: Éxito
+2024-10-20 03:06:22 | PID: 3597 | Usuario: jm-so | Operación: Escritura | Archivo: lola.txt | Resultado: Éxito
+2024-10-20 03:06:23 | PID: 3606 | Usuario: jm-so | Operación: Lectura | Archivo: lola.txt | Resultado: Éxito
+2024-10-20 03:06:23 | PID: 3620 | Usuario: jm-so | Operación: Escritura | Archivo: lola.txt | Resultado: Éxito
+2024-10-20 03:06:24 | PID: 3629 | Usuario: jm-so | Operación: Eliminación | Archivo: lola.txt | Resultado: Éxito
