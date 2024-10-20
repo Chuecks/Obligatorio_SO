@@ -78,3 +78,11 @@ profe.txt ño rwx "Modificado por Usuario 2 - iteración 5"
 profe.txt fue creado por jm-so.
 profe.txt fue modificado por jm-so.
 profe.txt fue eliminado por jm-so.
+archivo_prueba.txt 0 rwx ""
+archivo_prueba.txt fue creado por jm-so.
+archivo_prueba1.txt 0 rwx ""
+archivo_prueba1.txt fue creado por jm-so.
+archivo_prueba2.txt 0 rwx ""
+archivo_prueba2.txt fue creado por jm-so.
+pruebita.txt 0 rwx ""
+pruebita.txt fue creado por jm-so.
