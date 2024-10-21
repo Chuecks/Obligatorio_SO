@@ -22,3 +22,16 @@
 2024-10-21 01:58:33 | PID: 3800 | Usuario: jm-so | Operación: Creación | Archivo: juanma_tomy.txt | Resultado: Éxito
 2024-10-21 01:58:33 | PID: 3813 | Usuario: jm-so | Operación: Escritura | Archivo: juanma_tomy.txt | Resultado: Éxito
 2024-10-21 02:15:28 | PID: 4970 | Usuario: jm-so | Operación: Creación | Archivo: lolo.txt | Resultado: Éxito
+2024-10-21 12:39:47 | PID: 3156 | Usuario: jm-so | Operación: Creación | Archivo: higo.txt | Resultado: Éxito
+2024-10-21 12:39:47 | PID: 3164 | Usuario: jm-so | Operación: Escritura | Archivo: higo.txt | Resultado: Error: No existe
+2024-10-21 12:44:05 | PID: 3297 | Usuario: jm-so | Operación: Creación | Archivo: guiso.txt | Resultado: Éxito
+2024-10-21 12:44:05 | PID: 3305 | Usuario: jm-so | Operación: Escritura | Archivo: guiso.txt | Resultado: Error: No existe
+2024-10-21 12:54:01 | PID: 3544 | Usuario: jm-so | Operación: Creación | Archivo: cortina.txt | Resultado: Éxito
+2024-10-21 12:57:32 | PID: 3705 | Usuario: jm-so | Operación: Creación | Archivo: corta.txt | Resultado: Éxito
+2024-10-21 13:06:05 | PID: 3862 | Usuario: jm-so | Operación: Creación | Archivo: ola.txt | Resultado: Error: Ya existe
+2024-10-21 13:06:05 | PID: 3877 | Usuario: jm-so | Operación: Escritura | Archivo: ola.txt | Resultado: Éxito
+2024-10-21 13:06:05 | PID: 3889 | Usuario: jm-so | Operación: Lectura | Archivo: ola.txt | Resultado: Éxito
+2024-10-21 13:06:06 | PID: 3903 | Usuario: jm-so | Operación: Lectura | Archivo: ola.txt | Resultado: Éxito
+2024-10-21 13:06:07 | PID: 3916 | Usuario: jm-so | Operación: Lectura | Archivo: ola.txt | Resultado: Éxito
+2024-10-21 13:06:08 | PID: 3929 | Usuario: jm-so | Operación: Lectura | Archivo: ola.txt | Resultado: Éxito
+2024-10-21 13:06:09 | PID: 3942 | Usuario: jm-so | Operación: Lectura | Archivo: ola.txt | Resultado: Éxito

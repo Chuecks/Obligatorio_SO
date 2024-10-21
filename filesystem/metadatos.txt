@@ -1,11 +1,11 @@
-hola.txt ño rw- "Modificado por Usuario 2 - iteración 5" (eliminado)
+hola.txt ño rw- "Contenido inicial por Usuario 1 (jm-so)" (eliminado)
 hola.txt fue modificado por jm-so. (eliminado)
 hola.txt fue modificado por jm-so. (eliminado)
 hola.txt fue modificado por jm-so. (eliminado)
 hola.txt fue modificado por jm-so. (eliminado)
 hola.txt fue modificado por jm-so. (eliminado)
 hola.txt fue modificado por jm-so. (eliminado)
-hola.txt fue eliminado por Usuario 4. (eliminado)
+hola.txt fue eliminado por Usuario ño. (eliminado)
 hola.txt fue eliminado por jm-so.
 fea.txt ño rw- "Modificado por Usuario 2 - iteración 5"
 fea.txt fue modificado por jm-so.
@@ -96,7 +96,7 @@ burra.txt fue modificado por jm-so.
 burra.txt fue eliminado por .
 lucy.txt 0 rwx ""
 lucy.txt fue creado por jm-so.
-lola.txt ño rwx "Modificado por Usuario 2 - iteración 5"
+lola.txt ño rwx "Contenido inicial por Usuario 1 (jm-so)"
 lola.txt fue creado por jm-so.
 lola.txt fue modificado por jm-so.
 lola.txt fue eliminado por .
