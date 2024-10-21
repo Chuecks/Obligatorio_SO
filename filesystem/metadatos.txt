@@ -100,3 +100,7 @@ lola.txt ño rwx "Modificado por Usuario 2 - iteración 5"
 lola.txt fue creado por jm-so.
 lola.txt fue modificado por jm-so.
 lola.txt fue eliminado por .
+juanma_tomy.txt ño rwx "Modificado por Usuario tm-so - iteración 5"
+juanma_tomy.txt fue creado por jm-so.
+juanma_tomy.txt fue modificado por jm-so.
+juanma_tomy.txt fue modificado por tm-so.
