@@ -7,13 +7,12 @@ crear_archivo() {
     local nombre_archivo=$1
     local permisos=$2
 
-    if grep -q "$nombre_archivo" filesystem/metadatos.txt; then
-        echo "Error: El archivo $nombre_archivo ya existe en los metadatos."
+    if grep -q "$nombre_archivo" filesystem/operaciones.log; then
+        echo "Error: El archivo $nombre_archivo ya existe."
         bash $(dirname "$0")/log_operation.sh "Creación" "$nombre_archivo" "Error: Ya existe"
         return 1
     fi
 
-    echo "$nombre_archivo 0 $permisos \"\"" >> filesystem/metadatos.txt
     touch filesystem/$nombre_archivo
 
     case $permisos in
@@ -24,9 +23,7 @@ crear_archivo() {
     esac
 
     chmod $octal_permisos filesystem/$nombre_archivo
-    echo "$nombre_archivo fue creado por $usuario." >> filesystem/metadatos.txt
     bash $(dirname "$0")/log_operation.sh "Creación" "$nombre_archivo" "Éxito"
-
     echo "Archivo $nombre_archivo creado con permisos $permisos."
 }
 

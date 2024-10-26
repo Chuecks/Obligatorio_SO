@@ -7,21 +7,21 @@ escribir_archivo() {
     local nombre_archivo=$1
     local nuevo_contenido=$2
 
-    if grep -q "$nombre_archivo" filesystem/metadatos.txt; then
+    if grep -q "$nombre_archivo" filesystem/operaciones.log; then
         echo "$nuevo_contenido" > filesystem/$nombre_archivo
-        nuevo_tamaño=$(stat -c%s "filesystem/$nombre_archivo")
-        sed -i "/$nombre_archivo/s/[0-9]\{1,\}/$nuevo_tamaño/" filesystem/metadatos.txt
-        sed -i "/$nombre_archivo/s/\".*\"/\"$nuevo_contenido\"/" filesystem/metadatos.txt
 
-        if ! grep -q "$nombre_archivo fue modificado por $usuario" filesystem/metadatos.txt; then
-            echo "$nombre_archivo fue modificado por $usuario." >> filesystem/metadatos.txt
+        if [ -f "filesystem/$nombre_archivo" ]; then
+            ./log_operation.sh "Escritura" "$nombre_archivo" "Éxito"
+            echo "Contenido del archivo $nombre_archivo actualizado."
+        else
+            echo "Error: No se pudo encontrar $nombre_archivo en filesystem."
+            ./log_operation.sh "Escritura" "$nombre_archivo" "Error: No existe el archivo físico"
+            exit 1
         fi
-
-        ./log_operation.sh "Escritura" "$nombre_archivo" "Éxito"
-        echo "Contenido del archivo $nombre_archivo actualizado."
     else
-        ./log_operation.sh "Escritura" "$nombre_archivo" "Error: No existe"
-        echo "Error: El archivo $nombre_archivo no existe."
+        ./log_operation.sh "Escritura" "$nombre_archivo" "Error: No registrado"
+        echo "Error: El archivo $nombre_archivo no está registrado en operaciones.log."
+        exit 1
     fi
 }
 

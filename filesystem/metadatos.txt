@@ -104,3 +104,21 @@ juanma_tomy.txt ño rwx "Modificado por Usuario tm-so - iteración 5"
 juanma_tomy.txt fue creado por jm-so.
 juanma_tomy.txt fue modificado por jm-so.
 juanma_tomy.txt fue modificado por tm-so.
+archivo.txt ño rwx "Contenido inicial por Usuario 1 (jm-so)"
+archivo.txt fue creado por jm-so.
+archivo.txt fue modificado por jm-so.
+munni.txt 0 -rwx ""
+gil.txt 0 rwx ""
+gil.txt fue creado por jm-so.
+archivo.txt fue eliminado por .
+arch.txt ño rwx "Modificado por Usuario 3 (tm-so)"
+arch.txt fue creado por jm-so.
+arch.txt fue modificado por jm-so.
+arch.txt fue eliminado por .
+archivo1.txt 0 rwx ""
+archivo1.txt fue creado por jm-so.
+archivoño.txt 0 rwx ""
+archivoño.txt fue creado por jm-so.
+archivo3.txt 0 rwx ""
+archivo3.txt fue creado por jm-so.
+archivo1.txt fue eliminado por .

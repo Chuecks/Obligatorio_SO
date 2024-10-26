@@ -3,8 +3,7 @@
 leer_archivo() {
     local nombre_archivo=$1
 
-    if grep -q "$nombre_archivo" filesystem/metadatos.txt; then
-        # Leer el contenido real del archivo desde el sistema de archivos
+    if grep -q "$nombre_archivo" filesystem/operaciones.log; then
         if [ -f "filesystem/$nombre_archivo" ]; then
             contenido=$(cat "filesystem/$nombre_archivo")
             echo "Contenido del archivo $nombre_archivo: \"$contenido\""
