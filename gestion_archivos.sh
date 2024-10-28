@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Pipe y mutex
+# Definir el pipe y el mutex
 pipe="mi_pipe"
 mutex="mutex.lock"
 
@@ -23,26 +23,40 @@ crear_archivo_si_no_existe() {
 
 # Extraer los últimos tres archivos creados de operaciones.log
 obtener_ultimos_archivos() {
-    tail -n 50 filesystem/operaciones.log | grep "Creación" | grep "Resultado: Éxito" | awk '{print $6}' | tail -n 3 | sed 's/Archivo: //g'
+    tail -n 50 filesystem/operaciones.log | grep "Creación" | grep "Resultado: Éxito" | sed -E 's/.*Archivo: ([^ ]+).*/\1/' | tail -n 3
 }
 
-# Función de operación aleatoria
+# Función de operación aleatoria en un archivo 
 operacion_aleatoria() {
     local archivo=$1
-    local operacion=$((RANDOM % 5))
+    local operacion=$((RANDOM % 4))  # Ahora solo 4 operaciones: leer, escribir, eliminar, ejecutar
+    local terminal_id=$(ps -p $$ -o tty=)  # Obtener el ID de la terminal actual
 
+    # Bloqueo con mutex
     exec 200>"$mutex"
     flock -w 5 200
-
+    
+    # Realizar la operación aleatoria y registrar en el pipe
     case $operacion in
-        0) ./crea_un_archivo.sh "$archivo" rwx ;;
-        1) ./leer_un_archivo.sh "$archivo" ;;
-        2) ./escribir_en_un_archivo.sh "$archivo" "Contenido aleatorio $(date +%s)" ;;
-        3) ./eliminar_un_archivo.sh "$archivo" ;;
-        4) ./ejecutar_un_archivo.sh "$archivo" ;;
+        0) 
+            ./leer_un_archivo.sh "$archivo"
+            echo "Operación LEER realizada en $archivo desde terminal $terminal_id" > "$pipe"
+            ;;
+        1) 
+            ./escribir_en_un_archivo.sh "$archivo" "Contenido aleatorio $(date +%s)"
+            echo "Operación ESCRIBIR realizada en $archivo desde terminal $terminal_id" > "$pipe"
+            ;;
+        2) 
+            ./eliminar_un_archivo.sh "$archivo"
+            echo "Operación ELIMINAR realizada en $archivo desde terminal $terminal_id" > "$pipe"
+            ;;
+        3) 
+            ./ejecutar_un_archivo.sh "$archivo"
+            echo "Operación EJECUTAR realizada en $archivo desde terminal $terminal_id" > "$pipe"
+            ;;
     esac
 
-    echo "Operación $operacion realizada en $archivo" > "$pipe"
+    # Liberar el mutex
     flock -u 200
 }
 
@@ -58,9 +72,11 @@ while true; do
         ultimos_archivos=("archivo1.txt" "archivo2.txt" "archivo3.txt")
     fi
 
+    # Ejecutar operaciones aleatorias en paralelo para cada archivo
     for archivo in "${ultimos_archivos[@]}"; do
         operacion_aleatoria "$archivo" &
     done
 
+    # Pausa de un segundo entre iteraciones
     sleep 1
 done

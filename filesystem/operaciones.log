@@ -1,72 +1,34 @@
-2024-10-26 03:54:06 | PID: 44927 | Usuario: jm-so | Operación: Creación | Archivo: archivo1.txt | Resultado: Éxito
-2024-10-26 03:54:06 | PID: 44937 | Usuario: jm-so | Operación: Creación | Archivo: archivo2.txt | Resultado: Éxito
-2024-10-26 03:54:06 | PID: 44947 | Usuario: jm-so | Operación: Creación | Archivo: archivo3.txt | Resultado: Éxito
-2024-10-26 03:54:06 | PID: 44960 | Usuario: jm-so | Operación: Lectura | Archivo: archivo2.txt | Resultado: Éxito
-2024-10-26 03:54:06 | PID: 44968 | Usuario: jm-so | Operación: Creación | Archivo: archivo1.txt | Resultado: Error: Ya existe
-2024-10-26 03:54:06 | PID: 44976 | Usuario: jm-so | Operación: Eliminación | Archivo: archivo3.txt | Resultado: Éxito
-2024-10-26 03:54:07 | PID: 44998 | Usuario: jm-so | Operación: Creación | Archivo: | | Resultado: Error: Ya existe
-2024-10-26 03:54:07 | PID: 45006 | Usuario: jm-so | Operación: Creación | Archivo: | | Resultado: Error: Ya existe
-2024-10-26 03:54:07 | PID: 45012 | Usuario: jm-so | Operación: Lectura | Archivo: | | Resultado: Error: No se encontró el archivo real
-2024-10-26 04:01:08 | PID: 45132 | Usuario: jm-so | Operación: Escritura | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:08 | PID: 45141 | Usuario: jm-so | Operación: Escritura | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:08 | PID: 45147 | Usuario: jm-so | Operación: Ejecución | Archivo: | | Resultado: Error: Permiso denegado
-2024-10-26 04:01:09 | PID: 45171 | Usuario: jm-so | Operación: Eliminación | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:09 | PID: 45177 | Usuario: jm-so | Operación: Ejecución | Archivo: | | Resultado: Error: Permiso denegado
-2024-10-26 04:01:09 | PID: 45185 | Usuario: jm-so | Operación: Creación | Archivo: | | Resultado: Error: Ya existe
-2024-10-26 04:01:10 | PID: 45207 | Usuario: jm-so | Operación: Escritura | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:10 | PID: 45213 | Usuario: jm-so | Operación: Ejecución | Archivo: | | Resultado: Error: Permiso denegado
-2024-10-26 04:01:10 | PID: 45220 | Usuario: jm-so | Operación: Lectura | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:11 | PID: 45242 | Usuario: jm-so | Operación: Eliminación | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:11 | PID: 45250 | Usuario: jm-so | Operación: Escritura | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:11 | PID: 45257 | Usuario: jm-so | Operación: Lectura | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:12 | PID: 45279 | Usuario: jm-so | Operación: Escritura | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:12 | PID: 45287 | Usuario: jm-so | Operación: Creación | Archivo: | | Resultado: Error: Ya existe
-2024-10-26 04:01:12 | PID: 45294 | Usuario: jm-so | Operación: Lectura | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:13 | PID: 45314 | Usuario: jm-so | Operación: Ejecución | Archivo: | | Resultado: Error: Permiso denegado
-2024-10-26 04:01:13 | PID: 45322 | Usuario: jm-so | Operación: Eliminación | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:13 | PID: 45329 | Usuario: jm-so | Operación: Eliminación | Archivo: | | Resultado: Error: No existe
-2024-10-26 04:01:14 | PID: 45349 | Usuario: jm-so | Operación: Lectura | Archivo: | | Resultado: Error: No se encontró el archivo real
-2024-10-26 04:01:14 | PID: 45357 | Usuario: jm-so | Operación: Escritura | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:14 | PID: 45365 | Usuario: jm-so | Operación: Eliminación | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:15 | PID: 45386 | Usuario: jm-so | Operación: Eliminación | Archivo: | | Resultado: Error: No existe
-2024-10-26 04:01:15 | PID: 45394 | Usuario: jm-so | Operación: Creación | Archivo: | | Resultado: Error: Ya existe
-2024-10-26 04:01:15 | PID: 45402 | Usuario: jm-so | Operación: Escritura | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:16 | PID: 45424 | Usuario: jm-so | Operación: Escritura | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:16 | PID: 45432 | Usuario: jm-so | Operación: Creación | Archivo: | | Resultado: Error: Ya existe
-2024-10-26 04:01:16 | PID: 45438 | Usuario: jm-so | Operación: Ejecución | Archivo: | | Resultado: Error: Permiso denegado
-2024-10-26 04:01:17 | PID: 45460 | Usuario: jm-so | Operación: Escritura | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:17 | PID: 45466 | Usuario: jm-so | Operación: Ejecución | Archivo: | | Resultado: Error: Permiso denegado
-2024-10-26 04:01:17 | PID: 45474 | Usuario: jm-so | Operación: Escritura | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:18 | PID: 45498 | Usuario: jm-so | Operación: Escritura | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:18 | PID: 45505 | Usuario: jm-so | Operación: Lectura | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:18 | PID: 45511 | Usuario: jm-so | Operación: Ejecución | Archivo: | | Resultado: Error: Permiso denegado
-2024-10-26 04:01:19 | PID: 45533 | Usuario: jm-so | Operación: Escritura | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:19 | PID: 45539 | Usuario: jm-so | Operación: Ejecución | Archivo: | | Resultado: Error: Permiso denegado
-2024-10-26 04:01:19 | PID: 45546 | Usuario: jm-so | Operación: Lectura | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:20 | PID: 45569 | Usuario: jm-so | Operación: Creación | Archivo: | | Resultado: Error: Ya existe
-2024-10-26 04:01:20 | PID: 45575 | Usuario: jm-so | Operación: Ejecución | Archivo: | | Resultado: Error: Permiso denegado
-2024-10-26 04:01:20 | PID: 45583 | Usuario: jm-so | Operación: Eliminación | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:21 | PID: 45605 | Usuario: jm-so | Operación: Creación | Archivo: | | Resultado: Error: Ya existe
-2024-10-26 04:01:21 | PID: 45613 | Usuario: jm-so | Operación: Escritura | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:21 | PID: 45621 | Usuario: jm-so | Operación: Escritura | Archivo: | | Resultado: Éxito
-2024-10-26 04:01:22 | PID: 45646 | Usuario: jm-so | Operación: Ejecución | Archivo: archivo1.txt | Resultado: Éxito
-2024-10-26 04:01:22 | PID: 45654 | Usuario: jm-so | Operación: Eliminación | Archivo: archivo2.txt | Resultado: Éxito
-2024-10-26 04:01:22 | PID: 45660 | Usuario: jm-so | Operación: Ejecución | Archivo: archivo3.txt | Resultado: Error: Permiso denegado
-2024-10-26 04:01:23 | PID: 45686 | Usuario: jm-so | Operación: Escritura | Archivo: archivo2.txt | Resultado: Éxito
-2024-10-26 04:01:23 | PID: 45693 | Usuario: jm-so | Operación: Lectura | Archivo: archivo1.txt | Resultado: Éxito
-2024-10-26 04:01:23 | PID: 45699 | Usuario: jm-so | Operación: Ejecución | Archivo: archivo3.txt | Resultado: Error: Permiso denegado
-2024-10-26 04:04:27 | PID: 45751 | Usuario: jm-so | Operación: Lectura | Archivo: archivo3.txt | Resultado: Error: No se encontró el archivo real
-2024-10-26 04:04:27 | PID: 45758 | Usuario: jm-so | Operación: Lectura | Archivo: archivo2.txt | Resultado: Éxito
-2024-10-26 04:04:27 | PID: 45766 | Usuario: jm-so | Operación: Ejecución | Archivo: archivo1.txt | Resultado: Éxito
-2024-10-26 04:04:28 | PID: 45790 | Usuario: jm-so | Operación: Lectura | Archivo: archivo1.txt | Resultado: Éxito
-2024-10-26 04:04:28 | PID: 45797 | Usuario: jm-so | Operación: Lectura | Archivo: archivo2.txt | Resultado: Éxito
-2024-10-26 04:04:28 | PID: 45803 | Usuario: jm-so | Operación: Ejecución | Archivo: archivo3.txt | Resultado: Error: Permiso denegado
-2024-10-26 04:04:29 | PID: 45828 | Usuario: jm-so | Operación: Eliminación | Archivo: archivo2.txt | Resultado: Éxito
-2024-10-26 04:04:29 | PID: 45836 | Usuario: jm-so | Operación: Eliminación | Archivo: archivo1.txt | Resultado: Éxito
-2024-10-26 04:04:29 | PID: 45843 | Usuario: jm-so | Operación: Eliminación | Archivo: archivo3.txt | Resultado: Error: No existe
-2024-10-26 04:04:30 | PID: 45868 | Usuario: jm-so | Operación: Escritura | Archivo: archivo1.txt | Resultado: Éxito
-2024-10-26 04:04:30 | PID: 45876 | Usuario: jm-so | Operación: Creación | Archivo: archivo2.txt | Resultado: Error: Ya existe
-2024-10-26 04:04:30 | PID: 45884 | Usuario: jm-so | Operación: Creación | Archivo: archivo3.txt | Resultado: Error: Ya existe
-2024-10-26 04:04:31 | PID: 45907 | Usuario: jm-so | Operación: Ejecución | Archivo: archivo1.txt | Resultado: Error: Permiso denegado
-2024-10-26 04:04:31 | PID: 45915 | Usuario: jm-so | Operación: Creación | Archivo: archivo2.txt | Resultado: Error: Ya existe
-2024-10-26 04:04:31 | PID: 45923 | Usuario: jm-so | Operación: Escritura | Archivo: archivo3.txt | Resultado: Éxito
+2024-10-28 01:32:09 | PID: 6995 | Usuario: jm-so | Operación: Creación | Archivo: tom.txt | Resultado: Éxito
+2024-10-28 01:32:16 | PID: 7004 | Usuario: jm-so | Operación: Creación | Archivo: municipio.txt | Resultado: Éxito
+2024-10-28 01:32:27 | PID: 7019 | Usuario: jm-so | Operación: Creación | Archivo: cat.txt | Resultado: Éxito
+2024-10-28 01:32:43 | PID: 7030 | Usuario: jm-so | Operación: Creación | Archivo: cata.txt | Resultado: Éxito
+2024-10-28 01:32:48 | PID: 7054 | Usuario: jm-so | Operación: Eliminación | Archivo: cata.txt | Resultado: Éxito
+2024-10-28 01:32:53 | PID: 7128 | Usuario: jm-so | Operación: Escritura | Archivo: municipio.txt | Resultado: Éxito
+2024-10-28 01:32:53 | PID: 7132 | Usuario: jm-so | Operación: Eliminación | Archivo: cat.txt | Resultado: Éxito
+2024-10-28 01:32:54 | PID: 7158 | Usuario: jm-so | Operación: Ejecución | Archivo: cata.txt | Resultado: Error: Permiso denegado
+2024-10-28 01:32:54 | PID: 7163 | Usuario: jm-so | Operación: Escritura | Archivo: cat.txt | Resultado: Éxito
+2024-10-28 01:32:54 | PID: 7164 | Usuario: jm-so | Operación: Eliminación | Archivo: municipio.txt | Resultado: Éxito
+2024-10-28 01:32:55 | PID: 7196 | Usuario: jm-so | Operación: Lectura | Archivo: cat.txt | Resultado: Éxito
+2024-10-28 01:32:55 | PID: 7197 | Usuario: jm-so | Operación: Eliminación | Archivo: municipio.txt | Resultado: Error: No existe
+2024-10-28 01:32:55 | PID: 7199 | Usuario: jm-so | Operación: Escritura | Archivo: cata.txt | Resultado: Éxito
+2024-10-28 01:32:56 | PID: 7230 | Usuario: jm-so | Operación: Ejecución | Archivo: cat.txt | Resultado: Error: Permiso denegado
+2024-10-28 01:32:56 | PID: 7229 | Usuario: jm-so | Operación: Ejecución | Archivo: municipio.txt | Resultado: Error: Permiso denegado
+2024-10-28 01:32:56 | PID: 7231 | Usuario: jm-so | Operación: Eliminación | Archivo: cata.txt | Resultado: Éxito
+2024-10-28 01:32:57 | PID: 7260 | Usuario: jm-so | Operación: Eliminación | Archivo: municipio.txt | Resultado: Error: No existe
+2024-10-28 01:32:57 | PID: 7263 | Usuario: jm-so | Operación: Ejecución | Archivo: cat.txt | Resultado: Error: Permiso denegado
+2024-10-28 01:32:57 | PID: 7265 | Usuario: jm-so | Operación: Eliminación | Archivo: cata.txt | Resultado: Error: No existe
+2024-10-28 01:32:58 | PID: 7291 | Usuario: jm-so | Operación: Lectura | Archivo: cata.txt | Resultado: Error: No se encontró el archivo real
+2024-10-28 01:32:58 | PID: 7294 | Usuario: jm-so | Operación: Eliminación | Archivo: municipio.txt | Resultado: Error: No existe
+2024-10-28 01:32:58 | PID: 7300 | Usuario: jm-so | Operación: Ejecución | Archivo: cat.txt | Resultado: Error: Permiso denegado
+2024-10-28 01:32:59 | PID: 7324 | Usuario: jm-so | Operación: Lectura | Archivo: municipio.txt | Resultado: Error: No se encontró el archivo real
+2024-10-28 01:32:59 | PID: 7325 | Usuario: jm-so | Operación: Lectura | Archivo: cat.txt | Resultado: Éxito
+2024-10-28 01:32:59 | PID: 7334 | Usuario: jm-so | Operación: Escritura | Archivo: cata.txt | Resultado: Éxito
+2024-10-28 01:33:00 | PID: 7366 | Usuario: jm-so | Operación: Escritura | Archivo: cat.txt | Resultado: Éxito
+2024-10-28 01:33:00 | PID: 7365 | Usuario: jm-so | Operación: Escritura | Archivo: municipio.txt | Resultado: Éxito
+2024-10-28 01:33:00 | PID: 7367 | Usuario: jm-so | Operación: Eliminación | Archivo: cata.txt | Resultado: Éxito
+2024-10-28 01:33:01 | PID: 7402 | Usuario: jm-so | Operación: Escritura | Archivo: municipio.txt | Resultado: Éxito
+2024-10-28 01:33:01 | PID: 7403 | Usuario: jm-so | Operación: Escritura | Archivo: cat.txt | Resultado: Éxito
+2024-10-28 01:33:01 | PID: 7404 | Usuario: jm-so | Operación: Escritura | Archivo: cata.txt | Resultado: Éxito
+2024-10-28 01:33:02 | PID: 7436 | Usuario: jm-so | Operación: Lectura | Archivo: municipio.txt | Resultado: Éxito
+2024-10-28 01:33:02 | PID: 7437 | Usuario: jm-so | Operación: Lectura | Archivo: cata.txt | Resultado: Éxito
+2024-10-28 01:33:02 | PID: 7441 | Usuario: jm-so | Operación: Eliminación | Archivo: cat.txt | Resultado: Éxito
