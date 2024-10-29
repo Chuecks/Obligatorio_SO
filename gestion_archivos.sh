@@ -16,14 +16,14 @@ fi
 crear_archivo_si_no_existe() {
     local archivo=$1
     local permisos=$2
-    if ! grep -q "Creación | Archivo: $archivo | Resultado: Éxito" filesystem/operaciones.log; then
-        ./crea_un_archivo.sh "$archivo" "$permisos"
+    if [ ! -e "filesystem/$archivo" ]; then
+        ./operaciones_archivos/crea_un_archivo.sh "$archivo" "$permisos"
     fi
 }
 
 # Extraer los últimos tres archivos creados de operaciones.log
 obtener_ultimos_archivos() {
-    tail -n 50 filesystem/operaciones.log | grep "Creación" | grep "Resultado: Éxito" | sed -E 's/.*Archivo: ([^ ]+).*/\1/' | tail -n 3
+    tail -n 50 ./operaciones.log | grep "Creación" | grep "Resultado: Éxito" | sed -E 's/.*Archivo: ([^ ]+).*/\1/' | tail -n 3
 }
 
 # Función de operación aleatoria en un archivo 
@@ -39,19 +39,19 @@ operacion_aleatoria() {
     # Realizar la operación aleatoria y registrar en el pipe
     case $operacion in
         0) 
-            ./leer_un_archivo.sh "$archivo"
+            ./operaciones_archivos/leer_un_archivo.sh "$archivo"
             echo "Operación LEER realizada en $archivo desde terminal $terminal_id" > "$pipe"
             ;;
         1) 
-            ./escribir_en_un_archivo.sh "$archivo" "Contenido aleatorio $(date +%s)"
+            ./operaciones_archivos/escribir_en_un_archivo.sh "$archivo" "Contenido aleatorio $(date +%s)"
             echo "Operación ESCRIBIR realizada en $archivo desde terminal $terminal_id" > "$pipe"
             ;;
         2) 
-            ./eliminar_un_archivo.sh "$archivo"
+            ./operaciones_archivos/eliminar_un_archivo.sh "$archivo"
             echo "Operación ELIMINAR realizada en $archivo desde terminal $terminal_id" > "$pipe"
             ;;
         3) 
-            ./ejecutar_un_archivo.sh "$archivo"
+            ./operaciones_archivos/ejecutar_un_archivo.sh "$archivo"
             echo "Operación EJECUTAR realizada en $archivo desde terminal $terminal_id" > "$pipe"
             ;;
     esac

@@ -7,9 +7,10 @@ crear_archivo() {
     local nombre_archivo=$1
     local permisos=$2
 
-    if grep -q "$nombre_archivo" filesystem/operaciones.log; then
+    # Verificar si el archivo ya existe en el sistema de archivos
+    if [ -e "filesystem/$nombre_archivo" ]; then
         echo "Error: El archivo $nombre_archivo ya existe."
-        bash $(dirname "$0")/log_operation.sh "Creación" "$nombre_archivo" "Error: Ya existe"
+        bash ./log_operation.sh "Creación" "$nombre_archivo" "Error: Ya existe"
         return 1
     fi
 
@@ -19,11 +20,14 @@ crear_archivo() {
         rwx) octal_permisos=700 ;;
         rw) octal_permisos=600 ;;
         r) octal_permisos=400 ;;
-        *) echo "Error: Permisos no válidos."; bash $(dirname "$0")/log_operation.sh "Creación" "$nombre_archivo" "Error: Permisos no válidos"; return 1 ;;
+        *) echo "Error: Permisos no válidos."
+           bash ./log_operation.sh "Creación" "$nombre_archivo" "Error: Permisos no válidos"
+           return 1
+           ;;
     esac
 
     chmod $octal_permisos filesystem/$nombre_archivo
-    bash $(dirname "$0")/log_operation.sh "Creación" "$nombre_archivo" "Éxito"
+    bash ./log_operation.sh "Creación" "$nombre_archivo" "Éxito"
     echo "Archivo $nombre_archivo creado con permisos $permisos."
 }
 
