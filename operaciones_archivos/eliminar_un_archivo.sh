@@ -4,7 +4,7 @@ eliminar_archivo() {
     local nombre_archivo=$1
     usuario=$(whoami)
 
-    if grep -q "$nombre_archivo" filesystem/operaciones.log; then
+    if grep -q "$nombre_archivo" ./operaciones.log; then
         if [ -f "filesystem/$nombre_archivo" ]; then
             rm "filesystem/$nombre_archivo"
             echo "Archivo $nombre_archivo eliminado correctamente."

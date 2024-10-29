@@ -7,7 +7,7 @@ escribir_archivo() {
     local nombre_archivo=$1
     local nuevo_contenido=$2
 
-    if grep -q "$nombre_archivo" filesystem/operaciones.log; then
+    if grep -q "$nombre_archivo" ./operaciones.log; then
         echo "$nuevo_contenido" > filesystem/$nombre_archivo
 
         if [ -f "filesystem/$nombre_archivo" ]; then

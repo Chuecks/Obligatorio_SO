@@ -11,7 +11,7 @@ log_operation() {
     local usuario=$(whoami)  # Obtener el usuario que ejecuta la operación
 
     # Registrar en el archivo de log
-    echo "$timestamp | PID: $pid | Usuario: $usuario | Operación: $operation | Archivo: $file | Resultado: $result" >> /home/jm-so/obligatorio/filesystem/operaciones.log
+    echo "$timestamp | PID: $pid | Usuario: $usuario | Operación: $operation | Archivo: $file | Resultado: $result" >> operaciones.log
 }
 
 # Llamar a la función con los parámetros
