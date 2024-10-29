@@ -12,18 +12,13 @@ if [ ! -f "$mutex" ]; then
     touch "$mutex"
 fi
 
-# Crear un archivo si no existe en operaciones.log
+# Crear un archivo si no existe en el sistema de archivos
 crear_archivo_si_no_existe() {
     local archivo=$1
     local permisos=$2
     if [ ! -e "filesystem/$archivo" ]; then
         ./operaciones_archivos/crea_un_archivo.sh "$archivo" "$permisos"
     fi
-}
-
-# Extraer los últimos tres archivos creados de operaciones.log
-obtener_ultimos_archivos() {
-    tail -n 50 ./operaciones.log | grep "Creación" | grep "Resultado: Éxito" | sed -E 's/.*Archivo: ([^ ]+).*/\1/' | tail -n 3
 }
 
 # Función de operación aleatoria en un archivo 
@@ -60,20 +55,21 @@ operacion_aleatoria() {
     flock -u 200
 }
 
-# Bucle infinito para realizar operaciones aleatorias en los últimos archivos creados
+# Bucle infinito para realizar operaciones aleatorias en los archivos existentes en filesystem
 while true; do
-    ultimos_archivos=($(obtener_ultimos_archivos))
+    # Obtener los archivos en el directorio filesystem
+    archivos=($(ls filesystem))
 
-    # Crear los archivos iniciales con permisos si no existen en operaciones.log
-    if [ ${#ultimos_archivos[@]} -lt 3 ]; then
+    # Crear los archivos iniciales con permisos si no existen
+    if [ ${#archivos[@]} -lt 3 ]; then
         crear_archivo_si_no_existe "archivo1.txt" "rwx"
         crear_archivo_si_no_existe "archivo2.txt" "rw"
         crear_archivo_si_no_existe "archivo3.txt" "r"
-        ultimos_archivos=("archivo1.txt" "archivo2.txt" "archivo3.txt")
+        archivos=("archivo1.txt" "archivo2.txt" "archivo3.txt")  # Asegurarse de que la lista tenga 3 archivos
     fi
 
     # Ejecutar operaciones aleatorias en paralelo para cada archivo
-    for archivo in "${ultimos_archivos[@]}"; do
+    for archivo in "${archivos[@]}"; do
         operacion_aleatoria "$archivo" &
     done
 
