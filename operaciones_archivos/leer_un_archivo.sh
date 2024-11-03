@@ -1,11 +1,12 @@
 #!/bin/bash
 
 leer_archivo() {
-    local nombre_archivo=$1
+    local ruta=$1
+    local nombre_archivo=$(basename "$ruta")
 
     if grep -q "$nombre_archivo" ./operaciones.log; then
-        if [ -f "filesystem/$nombre_archivo" ]; then
-            contenido=$(cat "filesystem/$nombre_archivo")
+        if [ -f "$ruta" ]; then
+            contenido=$(cat "$ruta")
             echo "Contenido del archivo $nombre_archivo: \"$contenido\""
             ./log_operation.sh "Lectura" "$nombre_archivo" "Éxito"
         else

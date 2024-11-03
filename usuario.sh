@@ -3,23 +3,27 @@
 # Definir la pipe
 pipe="mi_pipe"
 
-# Verificar que al menos se hayan pasado los primeros dos argumentos
+# Verificar que al menos se hayan pasado los primeros dos argumentos (operación y ruta)
 if [ "$#" -lt 2 ]; then
-    echo "Uso: $0 operación archivo [permisos/contenido]"
+    echo "Uso: $0 operación ruta [permisos/contenido]"
     echo "Ejemplos:"
-    echo "  $0 CREAR archivo.txt rwx"
-    echo "  $0 LEER archivo.txt"
-    echo "  $0 ESCRIBIR archivo.txt 'contenido a escribir'"
-    echo "  $0 ELIMINAR archivo.txt"
-    echo "  $0 EJECUTAR archivo.txt"
+    echo "  $0 CREAR ruta/ archivo.txt rwx"
+    echo "  $0 LEER ruta/archivo.txt"
+    echo "  $0 ESCRIBIR ruta/archivo.txt 'contenido a escribir'"
+    echo "  $0 ELIMINAR ruta/archivo.txt"
+    echo "  $0 CREAR_DIR ruta/nuevo_directorio/"
+    echo "  $0 ELIMINAR_DIR ruta/nuevo_directorio/"
     exit 1
 fi
 
 # Asignar argumentos a variables
 operacion=$1
-archivo=$2
+ruta=$2
 tercer_parametro=$3   # Puede ser permisos o contenido
 mensaje=""
+
+# Construir la ruta completa
+ruta_completa="./filesystem/$ruta"
 
 # Adaptar según la operación
 case "$operacion" in
@@ -29,7 +33,7 @@ case "$operacion" in
             exit 1
         fi
         permisos="$tercer_parametro"
-        mensaje="$operacion $archivo $permisos"
+        mensaje="$operacion $ruta_completa $permisos"
         ;;
     "ESCRIBIR")
         if [ -z "$tercer_parametro" ]; then
@@ -37,11 +41,18 @@ case "$operacion" in
             exit 1
         fi
         contenido="$tercer_parametro"
-        mensaje="$operacion $archivo \"$contenido\""
+        mensaje="$operacion $ruta_completa \"$contenido\""
+        ;;
+    "LEER" | "ELIMINAR" | "EJECUTAR")
+        mensaje="$operacion $ruta_completa"
+        ;;
+    "CREAR_DIR" | "ELIMINAR_DIR")
+        # CREAR_DIR y ELIMINAR_DIR solo requieren la ruta
+        mensaje="$operacion $ruta_completa"
         ;;
     *)
-        # Para LEER, ELIMINAR, y EJECUTAR, solo operacion y archivo son necesarios
-        mensaje="$operacion $archivo"
+        echo "Operación inválida: $operacion"
+        exit 1
         ;;
 esac
 

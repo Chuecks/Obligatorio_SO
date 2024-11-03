@@ -4,13 +4,14 @@
 usuario=$(whoami)
 
 escribir_archivo() {
-    local nombre_archivo=$1
+    local ruta=$1
     local nuevo_contenido=$2
+    local nombre_archivo=$(basename "$ruta")  # Obtener solo el nombre del archivo
 
     if grep -q "$nombre_archivo" ./operaciones.log; then
-        echo "$nuevo_contenido" > filesystem/$nombre_archivo
+        echo "$nuevo_contenido" > "$ruta"
 
-        if [ -f "filesystem/$nombre_archivo" ]; then
+        if [ -f "$ruta" ]; then
             ./log_operation.sh "Escritura" "$nombre_archivo" "Éxito"
             echo "Contenido del archivo $nombre_archivo actualizado."
         else
@@ -26,7 +27,7 @@ escribir_archivo() {
 }
 
 if [ "$#" -ne 2 ]; then
-    echo "Uso: $0 nombre_del_archivo 'nuevo_contenido'"
+    echo "Uso: $0 ruta_del_archivo 'nuevo_contenido'"
     exit 1
 fi
 

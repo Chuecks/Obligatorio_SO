@@ -1,12 +1,12 @@
 #!/bin/bash
 
 eliminar_archivo() {
-    local nombre_archivo=$1
+    local ruta=$1
     usuario=$(whoami)
 
     if grep -q "$nombre_archivo" ./operaciones.log; then
-        if [ -f "filesystem/$nombre_archivo" ]; then
-            rm "filesystem/$nombre_archivo"
+        if [ -f "$ruta" ]; then
+            rm "$ruta"
             echo "Archivo $nombre_archivo eliminado correctamente."
             ./log_operation.sh "Eliminación" "$nombre_archivo" "Éxito"
         else
