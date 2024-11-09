@@ -1,61 +1,63 @@
 #!/bin/bash
 
-# Definir la pipe
+# Definir la pipe principal y mutex
 pipe="mi_pipe"
+pid=$$
 
-# Verificar que al menos se hayan pasado los primeros dos argumentos (operación y ruta)
-if [ "$#" -lt 2 ]; then
-    echo "Uso: $0 operación ruta [permisos/contenido]"
+# Verificar que al menos se hayan pasado los primeros dos argumentos
+if [ "$#" -lt 2 ] && [[ "$1" != "BLOQUEAR" && "$1" != "DESBLOQUEAR" ]]; then
+    echo "Uso: $0 operación archivo [permisos/contenido]"
     echo "Ejemplos:"
-    echo "  $0 CREAR ruta/ archivo.txt rwx"
-    echo "  $0 LEER ruta/archivo.txt"
-    echo "  $0 ESCRIBIR ruta/archivo.txt 'contenido a escribir'"
-    echo "  $0 ELIMINAR ruta/archivo.txt"
-    echo "  $0 CREAR_DIR ruta/nuevo_directorio/"
-    echo "  $0 ELIMINAR_DIR ruta/nuevo_directorio/"
+    echo "  $0 CREAR archivo.txt rwx"
+    echo "  $0 LEER archivo.txt"
+    echo "  $0 ESCRIBIR archivo.txt 'contenido a escribir'"
+    echo "  $0 ELIMINAR archivo.txt"
+    echo "  $0 EJECUTAR archivo.txt"
+    echo "  $0 BLOQUEAR"
+    echo "  $0 DESBLOQUEAR"
     exit 1
 fi
 
 # Asignar argumentos a variables
 operacion=$1
-ruta=$2
-tercer_parametro=$3   # Puede ser permisos o contenido
+archivo=$2
+tercer_parametro=$3
 mensaje=""
 
-# Construir la ruta completa
-ruta_completa="./filesystem/$ruta"
-
-# Adaptar según la operación
+# Crear el mensaje con el identificador
 case "$operacion" in
     "CREAR")
         if [ -z "$tercer_parametro" ]; then
-            echo "Error: La operación CREAR requiere especificar permisos."
+            echo "Error: La operación CREAR requiere permisos."
             exit 1
         fi
         permisos="$tercer_parametro"
-        mensaje="$operacion $ruta_completa $permisos"
+        mensaje="$pid $operacion $archivo $permisos"
         ;;
     "ESCRIBIR")
         if [ -z "$tercer_parametro" ]; then
-            echo "Error: La operación ESCRIBIR requiere contenido para escribir."
+            echo "Error: La operación ESCRIBIR requiere contenido."
             exit 1
         fi
         contenido="$tercer_parametro"
-        mensaje="$operacion $ruta_completa \"$contenido\""
+        mensaje="$pid $operacion $archivo \"$contenido\""
         ;;
-    "LEER" | "ELIMINAR" | "EJECUTAR")
-        mensaje="$operacion $ruta_completa"
-        ;;
-    "CREAR_DIR" | "ELIMINAR_DIR")
-        # CREAR_DIR y ELIMINAR_DIR solo requieren la ruta
-        mensaje="$operacion $ruta_completa"
+    "BLOQUEAR"|"DESBLOQUEAR")
+        mensaje="$pid $operacion"
         ;;
     *)
-        echo "Operación inválida: $operacion"
-        exit 1
+        mensaje="$pid $operacion $archivo"
         ;;
 esac
 
 # Enviar mensaje a la pipe
 echo "$mensaje" > "$pipe"
-echo "Solicitud de operación enviada: $mensaje"
+echo "Solicitud de operación enviada desde PID $pid: $mensaje"
+
+# Leer respuestas de la pipe y filtrar por el PID
+while read -r respuesta; do
+    if [[ $respuesta == "$pid "* ]]; then
+        echo "Respuesta de main para el proceso $pid: ${respuesta#$pid }"
+        break
+    fi
+done < "$pipe"

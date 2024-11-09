@@ -1,91 +1,74 @@
 #!/bin/bash
 
-# Definir la pipe y el mutex
+# Definir la pipe y el archivo mutex
 pipe="mi_pipe"
 mutex="mutex.lock"
 
-# Crear la pipe y el mutex si no existen
+# Crear la pipe si no existe
 if [ ! -p "$pipe" ]; then
     mkfifo "$pipe"
 fi
-if [ ! -f "$mutex" ]; then
-    touch "$mutex"
-fi
-
-# Función para verificar si el archivo o directorio existe en la ruta
-verificar_existencia() {
-    local ruta="$1"
-    if [ ! -e "$ruta" ]; then
-        local error_message="Error: No se encontró '$ruta'."
-        echo "$error_message"
-        
-        # Registrar el error en operaciones.log usando log_operation.sh
-        ./log_operation.sh "VERIFICAR" "$ruta" "No se encontró."
-        return 1
-    fi
-    return 0
-}
 
 # Función para procesar las instrucciones de usuario.sh
 procesar_instruccion() {
-    local operacion=$1
-    local ruta=$2
-    local permisos_o_contenido=$3
+    local pid=$1
+    local operacion=$2
+    local archivo=$3
+    local permisos=$4
+    local contenido=$5
 
-    # Bloqueo de concurrencia con mutex
-    exec 200>"$mutex"
-    flock -w 5 200
+    # Verificar si el sistema está bloqueado
+    if [ -f "$mutex" ] && [[ "$operacion" != "DESBLOQUEAR" ]]; then
+        echo "$pid Error: El sistema está bloqueado. Desbloquéalo antes de realizar otras operaciones." > "$pipe"
+        return
+    fi
 
     # Ejecutar la operación solicitada
     case "$operacion" in
         "CREAR")
-            if [ -n "$permisos_o_contenido" ]; then
-                ./operaciones_archivos/crea_un_archivo.sh "$ruta" "$permisos_o_contenido"
+            if [ -n "$permisos" ]; then
+                ./operaciones_archivos/crea_un_archivo.sh "$archivo" "$permisos"
+                echo "$pid Operación CREAR realizada con éxito." > "$pipe"
             else
-                echo "Error: La operación CREAR requiere especificar permisos."
+                echo "$pid Error: La operación CREAR requiere permisos." > "$pipe"
             fi
             ;;
         "LEER")
-            if verificar_existencia "$ruta"; then
-                ./operaciones_archivos/leer_un_archivo.sh "$ruta"
-            fi
+            ./operaciones_archivos/leer_un_archivo.sh "$archivo"
+            echo "$pid Operación LEER realizada con éxito." > "$pipe"
             ;;
         "ESCRIBIR")
-            if verificar_existencia "$ruta"; then
-                if [ -n "$permisos_o_contenido" ]; then
-                    ./operaciones_archivos/escribir_en_un_archivo.sh "$ruta" "$permisos_o_contenido"
-                else
-                    echo "Error: La operación ESCRIBIR requiere contenido para escribir."
-                    ./log_operation.sh "ESCRIBIR" "$ruta" "Error: Falta contenido."
-                fi
+            if [ -n "$contenido" ]; then
+                ./operaciones_archivos/escribir_en_un_archivo.sh "$archivo" "$contenido"
+                echo "$pid Operación ESCRIBIR realizada con éxito." > "$pipe"
+            else
+                echo "$pid Error: La operación ESCRIBIR requiere contenido." > "$pipe"
             fi
             ;;
         "ELIMINAR")
-            if verificar_existencia "$ruta"; then
-                ./operaciones_archivos/eliminar_un_archivo.sh "$ruta"
-                ./log_operation.sh "ELIMINAR" "$ruta" "Éxito"
-            fi
+            ./operaciones_archivos/eliminar_un_archivo.sh "$archivo"
+            echo "$pid Operación ELIMINAR realizada con éxito." > "$pipe"
             ;;
         "EJECUTAR")
-            if verificar_existencia "$ruta"; then
-                ./operaciones_archivos/ejecutar_un_archivo.sh "$ruta"
-                ./log_operation.sh "EJECUTAR" "$ruta" "Éxito"
+            ./operaciones_archivos/ejecutar_un_archivo.sh "$archivo"
+            echo "$pid Operación EJECUTAR realizada con éxito." > "$pipe"
+            ;;
+        "BLOQUEAR")
+            touch "$mutex"
+            echo "$pid Sistema bloqueado exitosamente." > "$pipe"
+            ;;
+        "DESBLOQUEAR")
+            if [ -f "$mutex" ]; then
+                rm "$mutex"
+                echo "$pid Sistema desbloqueado exitosamente." > "$pipe"
+            else
+                echo "$pid Error: No hay ningún bloqueo activo." > "$pipe"
             fi
             ;;
-        "CREAR_DIR")
-            ./operaciones_directorios/crear_un_directorio.sh "$ruta"
-            ;;
-        "ELIMINAR_DIR")
-            ./operaciones_directorios/eliminar_un_directorio.sh "$ruta"
-            ;;
         *)
-            echo "Operación inválida: $operacion"
-            ./log_operation.sh "INVÁLIDO" "$ruta" "Operación inválida."
+            echo "$pid Operación inválida: $operacion" > "$pipe"
             ;;
     esac
-
-    # Liberar el mutex
-    flock -u 200
 }
 
 # Bucle para leer y procesar mensajes de la pipe
@@ -93,20 +76,16 @@ echo "Control de concurrencia iniciado. Esperando mensajes en $pipe..."
 while true; do
     # Leer la instrucción desde la pipe
     if read -r instruccion < "$pipe"; then
-        # Dividir la instrucción en operación, ruta, permisos/contenido
-        operacion=$(echo "$instruccion" | awk '{print $1}')
-        ruta=$(echo "$instruccion" | awk '{print $2}')
-        permisos_o_contenido=$(echo "$instruccion" | cut -d' ' -f3-)
+        # Dividir la instrucción en PID, operación, archivo, permisos y contenido
+        pid=$(echo "$instruccion" | awk '{print $1}')
+        operacion=$(echo "$instruccion" | awk '{print $2}')
+        archivo=$(echo "$instruccion" | awk '{print $3}')
+        permisos=$(echo "$instruccion" | awk '{print $4}')
+        contenido=$(echo "$instruccion" | cut -d" " -f5-)
 
-        # Remover las comillas alrededor del contenido, si existen
-        permisos_o_contenido="${permisos_o_contenido//\"/}"  # Elimina comillas dobles
+        echo "Main recibió: $instruccion - Ejecutando operación."
 
-        # Verificar la validez de la instrucción
-        if [[ -n "$operacion" && -n "$ruta" ]]; then
-            echo "Main recibió: $instruccion - Ejecutando operación."
-            procesar_instruccion "$operacion" "$ruta" "$permisos_o_contenido"
-        else
-            echo "Mensaje inválido o incompleto: $instruccion"
-        fi
+        # Procesar la instrucción
+        procesar_instruccion "$pid" "$operacion" "$archivo" "$permisos" "$contenido"
     fi
 done
