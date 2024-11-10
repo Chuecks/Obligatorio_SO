@@ -20,7 +20,7 @@ fi
 
 # Asignar argumentos a variables
 operacion=$1
-archivo=$2
+archivo="./filesystem/$2"
 tercer_parametro=$3
 mensaje=""
 

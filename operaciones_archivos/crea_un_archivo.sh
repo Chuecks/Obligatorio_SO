@@ -3,8 +3,6 @@
 crear_archivo() {
     local ruta_completa=$1
     local permisos=$2
-
-    # Obtener el directorio base de la ruta proporcionada
     local directorio_base=$(dirname "$ruta_completa")
 
     # Crear el directorio base si no existe
@@ -12,7 +10,7 @@ crear_archivo() {
         mkdir -p "$directorio_base"
     fi
 
-    # Verificar si el archivo ya existe en el sistema de archivos
+    # Verificar si el archivo ya existe
     if [ -e "$ruta_completa" ]; then
         echo "Error: El archivo $ruta_completa ya existe."
         bash ./log_operation.sh "Creación" "$ruta_completa" "Error: Ya existe"
@@ -22,7 +20,7 @@ crear_archivo() {
     # Crear el archivo
     touch "$ruta_completa"
 
-    # Asignar permisos en base al parámetro ingresado
+    # Asignar permisos
     case $permisos in
         rwx) octal_permisos=700 ;;
         rw) octal_permisos=600 ;;
@@ -36,6 +34,7 @@ crear_archivo() {
     chmod $octal_permisos "$ruta_completa"
     bash ./log_operation.sh "Creación" "$ruta_completa" "Éxito"
     echo "Archivo $ruta_completa creado con permisos $permisos."
+    return 0
 }
 
 # Validar los argumentos
@@ -44,5 +43,5 @@ if [ "$#" -ne 2 ]; then
     exit 1
 fi
 
-# Llamar a la función con los argumentos proporcionados
+# Ejecutar la función
 crear_archivo "$1" "$2"

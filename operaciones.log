@@ -1,1 +1,19 @@
 2024-11-10 00:45:19 | PID: No Definido | Usuario: tomas.munozmoor | Operación: Escritura | Archivo: archivo7.txt | Resultado: Error: No registrado
+2024-11-10 13:28:45 | PID: No Definido | Usuario: tomas.munozmoor | Operación: Creación | Archivo: archivo2.txt | Resultado: Éxito
+2024-11-10 13:29:04 | PID: No Definido | Usuario: tomas.munozmoor | Operación: Creación | Archivo: archivo2.txt | Resultado: Error: Ya existe
+2024-11-10 13:32:24 | PID: No Definido | Usuario: tomas.munozmoor | Operación: Creación | Archivo: ./filesystem/archivo2.txt | Resultado: Éxito
+2024-11-10 13:44:08 | PID: No Definido | Usuario: tomas.munozmoor | Operación: Lectura | Archivo: archivo2.txt | Resultado: Error: No se encontró el archivo real
+2024-11-10 13:44:33 | PID: No Definido | Usuario: tomas.munozmoor | Operación: Lectura | Archivo: archivo2.txt | Resultado: Error: No se encontró el archivo real
+2024-11-10 13:46:26 | PID: No Definido | Usuario: tomas.munozmoor | Operación: Escritura | Archivo: archivo2.txt | Resultado: Éxito
+2024-11-10 13:46:40 | PID: No Definido | Usuario: tomas.munozmoor | Operación: Lectura | Archivo: archivo2.txt | Resultado: Éxito
+2024-11-10 13:49:19 | PID: No Definido | Usuario: tomas.munozmoor | Operación: Escritura | Archivo: archivo2.txt | Resultado: Éxito
+2024-11-10 13:50:37 | PID: No Definido | Usuario: tomas.munozmoor | Operación: Escritura | Archivo: archivo2.txt | Resultado: Éxito
+2024-11-10 13:51:01 | PID: No Definido | Usuario: tomas.munozmoor | Operación: Escritura | Archivo: archivo3.txt | Resultado: Error: No registrado
+2024-11-10 13:57:58 | PID: No Definido | Usuario: tomas.munozmoor | Operación: Escritura | Archivo: archivo3.txt | Resultado: Éxito
+2024-11-10 14:02:04 | PID: No Definido | Usuario: tomas.munozmoor | Operación: Creación | Archivo: ./filesystem/archiv.txt | Resultado: Éxito
+2024-11-10 14:03:58 | PID: No Definido | Usuario: tomas.munozmoor | Operación: Creación | Archivo: ./filesystem/archiv.txt | Resultado: Error: Ya existe
+2024-11-10 14:06:44 | PID: No Definido | Usuario: tomas.munozmoor | Operación: Lectura | Archivo: archiv.txt | Resultado: Error: No se encontró el archivo real
+2024-11-10 14:07:15 | PID: No Definido | Usuario: tomas.munozmoor | Operación: Lectura | Archivo: archiv.txt | Resultado: Éxito
+2024-11-10 14:07:34 | PID: No Definido | Usuario: tomas.munozmoor | Operación: Lectura | Archivo: archiv.txt | Resultado: Éxito
+2024-11-10 14:12:36 | PID: No Definido | Usuario: tomas.munozmoor | Operación: Eliminación | Archivo: archiv.txt | Resultado: Éxito
+2024-11-10 14:34:43 | PID: No Definido | Usuario: tomas.munozmoor | Operación: CREAR_DIR | Archivo: ./filesystem/subfilesystem | Resultado: Éxito

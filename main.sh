@@ -24,34 +24,50 @@ procesar_instruccion() {
 
     # Ejecutar la operación solicitada
     case "$operacion" in
-        "CREAR")
+       
+       "CREAR")
             if [ -n "$permisos_contenido" ]; then
-                ./operaciones_archivos/crea_un_archivo.sh "$archivo" "$permisos_contenido"
-                echo "$pid Operación CREAR realizada con éxito." > "$pipe"
+                mensaje=$(./operaciones_archivos/crea_un_archivo.sh "$archivo" "$permisos_contenido")
+                echo "$pid $mensaje" > "$pipe"
             else
                 echo "$pid Error: La operación CREAR requiere permisos." > "$pipe"
             fi
             ;;
+
         "LEER")
-            ./operaciones_archivos/leer_un_archivo.sh "$archivo"
-            echo "$pid Operación LEER realizada con éxito." > "$pipe"
+            mensaje=$(./operaciones_archivos/leer_un_archivo.sh "$archivo")
+            echo "$pid $mensaje" > "$pipe"
             ;;
+
         "ESCRIBIR")
             if [ -n "$permisos_contenido" ]; then
-                ./operaciones_archivos/escribir_en_un_archivo.sh "$archivo" "$permisos_contenido"
-                echo "$pid Operación ESCRIBIR realizada con éxito." > "$pipe"
+                mensaje=$(./operaciones_archivos/escribir_en_un_archivo.sh "$archivo" "$permisos_contenido")
+                echo "$pid $mensaje" > "$pipe"
             else
                 echo "$pid Error: La operación ESCRIBIR requiere contenido." > "$pipe"
             fi
             ;;
+
         "ELIMINAR")
-            ./operaciones_archivos/eliminar_un_archivo.sh "$archivo"
-            echo "$pid Operación ELIMINAR realizada con éxito." > "$pipe"
+            mensaje=$(./operaciones_archivos/eliminar_un_archivo.sh "$archivo")
+            echo "$pid $mensaje" > "$pipe"
             ;;
+
         "EJECUTAR")
-            ./operaciones_archivos/ejecutar_un_archivo.sh "$archivo"
-            echo "$pid Operación EJECUTAR realizada con éxito." > "$pipe"
+            mensaje=$(./operaciones_archivos/ejecutar_un_archivo.sh "$archivo")
+            echo "$pid $mensaje" > "$pipe"
             ;;
+        
+        "CREAR_DIR")
+            mensaje=$(./operaciones_directorios/crear_un_directorio.sh "$archivo")
+            echo "$pid $mensaje" > "$pipe"
+            ;;
+        
+        "ELIMINAR_DIR")
+            mensaje=$(./operaciones_directorios/eliminar_un_directorio.sh "$archivo")
+            echo "$pid $mensaje" > "$pipe"
+            ;;
+
         "BLOQUEAR")
             touch "$mutex"
             echo "$pid Sistema bloqueado exitosamente." > "$pipe"
