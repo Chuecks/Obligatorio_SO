@@ -42,6 +42,15 @@ case "$operacion" in
         contenido="$tercer_parametro"
         mensaje="$pid $operacion $archivo \"$contenido\""
         ;;
+
+    "LEER" | "ELIMINAR" | "EJECUTAR")
+        mensaje="$pid $operacion $archivo"
+        ;;
+        
+    "CREAR_DIR" | "ELIMINAR_DIR")
+        mensaje="$pid $operacion $archivo"
+        ;;
+        
     "BLOQUEAR"|"DESBLOQUEAR")
         mensaje="$pid $operacion"
         ;;
