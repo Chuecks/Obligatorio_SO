@@ -40,7 +40,7 @@ case "$operacion" in
             exit 1
         fi
         contenido="$tercer_parametro"
-        mensaje="$pid $operacion $archivo \"$contenido\""
+        mensaje="$pid $operacion $archivo $contenido"
         ;;
 
     "LEER" | "ELIMINAR" | "EJECUTAR")

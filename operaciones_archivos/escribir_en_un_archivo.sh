@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Obtener el nombre del usuario actual
-usuario=$(whoami)
-
 escribir_archivo() {
     local ruta=$1
     local nuevo_contenido=$2

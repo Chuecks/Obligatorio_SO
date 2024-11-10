@@ -14,8 +14,7 @@ procesar_instruccion() {
     local pid=$1
     local operacion=$2
     local archivo=$3
-    local permisos=$4
-    local contenido=$5
+    local permisos_contenido=$4
 
     # Verificar si el sistema está bloqueado
     if [ -f "$mutex" ] && [[ "$operacion" != "DESBLOQUEAR" ]]; then
@@ -26,8 +25,8 @@ procesar_instruccion() {
     # Ejecutar la operación solicitada
     case "$operacion" in
         "CREAR")
-            if [ -n "$permisos" ]; then
-                ./operaciones_archivos/crea_un_archivo.sh "$archivo" "$permisos"
+            if [ -n "$permisos_contenido" ]; then
+                ./operaciones_archivos/crea_un_archivo.sh "$archivo" "$permisos_contenido"
                 echo "$pid Operación CREAR realizada con éxito." > "$pipe"
             else
                 echo "$pid Error: La operación CREAR requiere permisos." > "$pipe"
@@ -38,8 +37,8 @@ procesar_instruccion() {
             echo "$pid Operación LEER realizada con éxito." > "$pipe"
             ;;
         "ESCRIBIR")
-            if [ -n "$contenido" ]; then
-                ./operaciones_archivos/escribir_en_un_archivo.sh "$archivo" "$contenido"
+            if [ -n "$permisos_contenido" ]; then
+                ./operaciones_archivos/escribir_en_un_archivo.sh "$archivo" "$permisos_contenido"
                 echo "$pid Operación ESCRIBIR realizada con éxito." > "$pipe"
             else
                 echo "$pid Error: La operación ESCRIBIR requiere contenido." > "$pipe"
@@ -80,12 +79,11 @@ while true; do
         pid=$(echo "$instruccion" | awk '{print $1}')
         operacion=$(echo "$instruccion" | awk '{print $2}')
         archivo=$(echo "$instruccion" | awk '{print $3}')
-        permisos=$(echo "$instruccion" | awk '{print $4}')
-        contenido=$(echo "$instruccion" | cut -d" " -f5-)
+        permisos_contenido=$(echo "$instruccion" | awk '{print $4}')
 
         echo "Main recibió: $instruccion - Ejecutando operación."
 
         # Procesar la instrucción
-        procesar_instruccion "$pid" "$operacion" "$archivo" "$permisos" "$contenido"
+        procesar_instruccion "$pid" "$operacion" "$archivo" "$permisos_contenido" 
     fi
 done

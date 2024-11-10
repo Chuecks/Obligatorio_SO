@@ -2,7 +2,6 @@
 
 eliminar_archivo() {
     local ruta=$1
-    usuario=$(whoami)
 
     if grep -q "$nombre_archivo" ./operaciones.log; then
         if [ -f "$ruta" ]; then

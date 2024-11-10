@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Obtener el nombre del usuario actual
-usuario=$(whoami)
-
 crear_archivo() {
     local ruta_completa=$1
     local permisos=$2
