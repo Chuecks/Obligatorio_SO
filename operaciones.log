@@ -17,3 +17,10 @@
 2024-11-10 14:07:34 | PID: No Definido | Usuario: tomas.munozmoor | Operación: Lectura | Archivo: archiv.txt | Resultado: Éxito
 2024-11-10 14:12:36 | PID: No Definido | Usuario: tomas.munozmoor | Operación: Eliminación | Archivo: archiv.txt | Resultado: Éxito
 2024-11-10 14:34:43 | PID: No Definido | Usuario: tomas.munozmoor | Operación: CREAR_DIR | Archivo: ./filesystem/subfilesystem | Resultado: Éxito
+2024-11-11 13:41:31 | PID: No Definido | Usuario: jm-so | Operación: CREAR_DIR | Archivo: ./filesystem/juanma | Resultado: Éxito
+2024-11-11 13:41:53 | PID: No Definido | Usuario: jm-so | Operación: ELIMINAR_DIR | Archivo: ./filesystem/juanma | Resultado: Éxito
+2024-11-11 14:03:27 | PID: 3539 | Usuario: jm-so | Operación: ELIMINAR_DIR | Archivo: ./filesystem/juanma | Resultado: Error: No existe.
+2024-11-11 14:03:59 | PID: 3562 | Usuario: jm-so | Operación: CREAR_DIR | Archivo: ./filesystem/juanma | Resultado: Éxito
+2024-11-11 14:05:37 | PID: 3621 | Usuario: jm-so | Operación: ELIMINAR_DIR | Archivo: ./filesystem/juanma | Resultado: Éxito
+2024-11-11 14:05:43 | PID: 3639 | Usuario: jm-so | Operación: ELIMINAR_DIR | Archivo: ./filesystem/muni | Resultado: Error: No vacío.
+2024-11-11 14:06:16 | PID: 3682 | Usuario: jm-so | Operación: ELIMINAR_DIR | Archivo: ./filesystem/muni | Resultado: Éxito

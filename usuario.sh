@@ -13,6 +13,8 @@ if [ "$#" -lt 2 ] && [[ "$1" != "BLOQUEAR" && "$1" != "DESBLOQUEAR" ]]; then
     echo "  $0 ESCRIBIR archivo.txt 'contenido a escribir'"
     echo "  $0 ELIMINAR archivo.txt"
     echo "  $0 EJECUTAR archivo.txt"
+    echo "  $0 CREAR_DIR nombre del directorio "
+    echo "  $0 ELIMINAR_DIR nombre del directorio "
     echo "  $0 BLOQUEAR"
     echo "  $0 DESBLOQUEAR"
     exit 1
